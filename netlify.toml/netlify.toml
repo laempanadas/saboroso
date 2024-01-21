@@ -1,0 +1,14 @@
+[build]
+  base = "/opt/build/repo"
+  command = "npm run build"
+  publish = "/opt/build/repo/public"
+  functions = "/opt/build/repo/netlify/functions"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[build.environment]
+  NODE_ENV = "production"
+  # Adicione outras variáveis de ambiente conforme necessário para o seu projeto.
+
+# Outras configurações opcionais podem ser adicionadas aqui.
