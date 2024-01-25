@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node",
     "build": "comando_para_construir_sua_aplicacao",
-    "preinstall": "npm install -g sua_dependencia_global"
+    "preinstall": "npm install -g sua_dependencia_global",
+    "postinstall": "sua_dependencia_global"
   },
   "dependencies": {
     "connect-redis": "^3.4.2",
@@ -22,3 +23,4 @@
     "socket.io": "^2.3.0"
   }
 }
+
