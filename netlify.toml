@@ -3,11 +3,3 @@
   command = "npm run build"
   publish = "/opt/build/repo/public"
   functions = "/opt/build/repo/netlify/functions"
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
-
-[build.environment]
-  NODE_ENV = "production"
-
-
