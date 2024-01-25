@@ -9,6 +9,5 @@
 
 [build.environment]
   NODE_ENV = "production"
-  # Adicione outras variáveis de ambiente conforme necessário para o seu projeto.
 
-# Outras configurações opcionais podem ser adicionadas aqui.
+
