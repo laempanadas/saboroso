@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node",
-    "build": "npm run seu_comando_de_construcao"
+    "prebuild": "npm install -g sua_dependencia_global",
+  "build": "comando_para_construir_sua_aplicacao"
   },
   "dependencies": {
     "connect-redis": "^3.4.2",
