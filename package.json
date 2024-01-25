@@ -4,15 +4,13 @@
   "private": true,
   "scripts": {
     "start": "node",
-    "build": "comando_para_construir_sua_aplicacao",
-    "preinstall": "npm install -g sua_dependencia_global",
-    "postinstall": "sua_dependencia_global"
+    "build": "comando_para_construir_sua_aplicacao"
   },
   "dependencies": {
-    "connect-redis": "^3.4.2",
+    "connect-redis": "^7.1.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
-    "ejs": "~2.6.1",
+    "ejs": "^3.1.9",
     "express": "^4.15.2",
     "express-session": "^1.17.0",
     "formidable": "^1.2.1",
@@ -20,7 +18,6 @@
     "moment": "^2.24.0",
     "morgan": "~1.9.1",
     "mysql2": "^2.0.0",
-    "socket.io": "^2.3.0"
+    "socket.io": "^4.7.4"
   }
 }
-
