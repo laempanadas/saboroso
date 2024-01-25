@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node.js"
+    "start": "node.js",
+    "build": "comando_para_construir_sua_aplicacao"
   },
   "dependencies": {
     "connect-redis": "^3.4.2",
