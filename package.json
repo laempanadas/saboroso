@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node",
-    "build": "comando_para_construir_sua_aplicacao"
+    "build": "tsc"
+    
   },
   "dependencies": {
     "connect-redis": "^7.1.1",
