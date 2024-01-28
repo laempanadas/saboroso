@@ -4,15 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node",
-    "build": "dist"
-
-
-
-
-
-
-
-  },
+    "build": "tsc && mkdir -p dist"
+ },
   "dependencies": {
     "connect-redis": "^7.1.1",
     "cookie-parser": "~1.4.4",
