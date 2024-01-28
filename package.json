@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node",
-    "build": "tsc && mkdir -p dist && cp -r * dist"
+    "build": "dist"
 
 
 
