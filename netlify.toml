@@ -1,7 +1,7 @@
 [build]
   command = "npm run build"
   publish = "dist"
-  node_version = "8.1.11"
+  node_version = "8.11.1"
 
 [[edge_functions]]
 function = "hello"
