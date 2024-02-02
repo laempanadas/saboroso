@@ -1,8 +1,0 @@
-[build]
-  command = "npm run build"
-  publish = "dist"
-  node_version = "8.11.1"
-
-[[edge_functions]]
-function = "hello"
-path = "/test"
