@@ -1,9 +1,13 @@
 {
-    "build": {
-      "env": {
-        "NPM_CONFIG_PRODUCTION": "false"
-      },
-      "command": "nvm install 8.11.1 && nvm use 8.11.1 && npm install && npm run build"
+  "version": 2,
+  "builds": [
+    {
+      "src": "C:/Users/PC/Desktop/Empanadas/saboroso",
+      "use": "@vercel/node",
+      "config": {
+        "NODE_VERSION": "8.11.1"
+      }
     }
-  }
-  
+  ],
+  "routes": []
+}
