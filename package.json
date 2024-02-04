@@ -2,11 +2,11 @@
   "name": "saboroso",
   "version": "0.0.0",
   "private": true,
-  "scripts": {
-    "start": "node"
-  },
   "engines": {
     "node": "8.11.1"
+  },
+  "scripts": {
+    "start": "node"
   },
   "dependencies": {
     "connect-redis": "^7.1.1",
