@@ -88,12 +88,13 @@ class LaempanadasGrid {
 }
 
 getTrData(e){
-
-    let tr = e.path.find(el => {
-      return (el.tagName.toUpperCase() === 'TR');
-    });
-     return JSON.parse(tr.dataset.row); 
-     
+  let tr = e.currentTarget.closest('tr');
+  if (tr) {
+      return JSON.parse(tr.dataset.row); 
+  } else {
+      console.error('TR element not found.');
+      return null;
+  }
 
   }
 
