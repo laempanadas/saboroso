@@ -18,6 +18,19 @@
     "morgan": "^1.9.0",
     "mysql2": "^1.6.1",
     "socket.io": "^2.1.1"
-  }
-  
+  },
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laempanadas/saboroso.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/laempanadas/saboroso/issues"
+  },
+  "homepage": "https://github.com/laempanadas/saboroso#readme",
+  "description": ""
 }
