@@ -9,6 +9,7 @@
     "connect-redis": "^3.3.3",
     "cookie-parser": "^1.4.3",
     "debug": "^2.6.9",
+    "dotenv": "^16.4.5",
     "ejs": "^2.5.7",
     "express": "^4.15.2",
     "express-session": "^1.15.6",
