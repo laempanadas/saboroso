@@ -137,13 +137,13 @@ return new Promise((resolve, reject)=>{
     
     conn.query(`
     SELECT
-CONCAT(YEAR(date), '-', MONTH(date)) AS date,
+CONCAT(YEAR(date), '-', MONTH(date), '-01') AS date,
 COUNT(*) AS total,
 SUM(people) / COUNT(*) AS avg_peoplo
 FROM tb_reservations
 WHERE
   date BETWEEN ? AND ?
-  GROUP BY YEAR(date), MONTH(date)
+  GROUP BY YEAR(date), MONTH(date), date
   ORDER BY YEAR(date) DESC, MONTH(date) DESC; 
    `, [
 
