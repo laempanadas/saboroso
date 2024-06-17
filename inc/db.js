@@ -5,7 +5,7 @@ const mysql = require('mysql2/promise');
 console.log('DB_HOST:', process.env.DB_HOST);
 console.log('DB_USER:', process.env.DB_USER);
 console.log('DB_NAME:', process.env.DB_NAME);
-console.log('DB_PASSWORD:', process.env.DB_PASSWORD ? '******' : 'Not Provided');
+console.log('DB_PASSWORD:', process.env.DB_PASSWORD ? 'Bucetinha19#' : 'Not Provided');
 
 // Criando pool de conexões
 const pool = mysql.createPool({
