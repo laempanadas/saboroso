@@ -49,7 +49,7 @@ app.set('view engine', 'ejs');
 // Configuração da sessão
 app.use(session({
   store: new redisStore({
-    host: 'localhost',
+    host: '127.0.0.1',
     port: 6379
   }),
   secret: 'sh@llom',
