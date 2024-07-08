@@ -5,11 +5,11 @@ const contacts = require('./../inc/contacts');
 const emails = require('./../inc/emails');
 const router = express.Router();
 
-module.exports = function(io) {
+module.exports = function(io, pool) {
   /* GET home page. */
   router.get('/', async function(req, res, next) {
     try {
-      const results = await menus.getMenus();
+      const results = await menus.getMenus(pool);
       res.render('index', {
         title: 'La empanadas!',
         menus: results,
@@ -34,7 +34,7 @@ module.exports = function(io) {
       contacts.render(req, res, 'Digite a mensagem');
     } else {
       try {
-        await contacts.save(req.body);
+        await contacts.save(req.body, pool);
         req.body = {};
         io.emit('dashboard update');
         contacts.render(req, res, null, 'Contato enviado com sucesso!');
@@ -46,7 +46,7 @@ module.exports = function(io) {
 
   router.get('/menus', async function(req, res, next) {
     try {
-      const results = await menus.getMenus();
+      const results = await menus.getMenus(pool);
       res.render('menus', {
         title: 'Menus - La empanadas!',
         background: 'images/img_bg_1.jpg',
@@ -76,7 +76,7 @@ module.exports = function(io) {
       reservations.render(req, res, 'Selecione a hora');
     } else {
       try {
-        await reservations.save(req.body);
+        await reservations.save(req.body, pool);
         req.body = {};
         io.emit('dashboard update');
         reservations.render(req, res, null, 'Reserva realizada com sucesso!');
@@ -96,7 +96,7 @@ module.exports = function(io) {
 
   router.post('/subscribe', async function(req, res, next) {
     try {
-      const results = await emails.save(req);
+      const results = await emails.save(req, pool);
       res.send(results);
     } catch (err) {
       res.send(err);

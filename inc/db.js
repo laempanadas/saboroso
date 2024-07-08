@@ -1,13 +1,7 @@
-require('dotenv').config();
+// db.js
 const mysql = require('mysql2/promise');
+require('dotenv').config();
 
-// Verificando se as variáveis de ambiente foram carregadas corretamente
-console.log('DB_HOST:', process.env.DB_HOST);
-console.log('DB_USER:', process.env.DB_USER);
-console.log('DB_NAME:', process.env.DB_NAME);
-console.log('DB_PASSWORD:', process.env.DB_PASSWORD ? 'Bucetinha19#' : 'Not Provided');
-
-// Criando pool de conexões
 const pool = mysql.createPool({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
@@ -18,7 +12,6 @@ const pool = mysql.createPool({
   queueLimit: 0
 });
 
-// Função para verificar a conexão
 async function verifyConnection() {
   try {
     const connection = await pool.getConnection();
@@ -29,8 +22,6 @@ async function verifyConnection() {
   }
 }
 
-// Verifique a conexão ao iniciar o servidor
 verifyConnection();
 
 module.exports = pool;
-

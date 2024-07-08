@@ -7,22 +7,23 @@ var session = require('express-session');
 var redisStore = require('connect-redis')(session);
 var formidable = require('formidable');
 var http = require('http');
-var socketIO = require('socket.io'); // Renomeado para evitar conflitos
-// O 'path' foi importado duas vezes, removi a duplicação.
+var socketIO = require('socket.io');
+var mysql = require('./inc/db'); // Importando o pool de conexões
+
 
 var app = express();
-var server = http.Server(app); // Renomeado para evitar conflitos
+var server = http.Server(app);
 var io = socketIO(server);
 
-io.on('connection', function(socket){
+io.on('connection', function(socket) {
   console.log('Novo usuário conectado!');
 });
 
-var indexRouter = require('./routes/index')(io);
-var adminRouter = require('./routes/admin')(io);
+var indexRouter = require('./routes/index')(io, mysql);
+var adminRouter = require('./routes/admin')(io, mysql);
 
 // Middleware para lidar com formulários
-app.use(function(req, res, next){
+app.use(function(req, res, next) {
   req.body = {};
 
   if (req.method === 'POST') {
@@ -31,7 +32,7 @@ app.use(function(req, res, next){
       keepExtensions: true
     });
 
-    form.parse(req, function(err, fields, files){
+    form.parse(req, function(err, fields, files) {
       req.body = fields;
       req.fields = fields;
       req.files = files;
@@ -79,7 +80,6 @@ app.use(function(err, req, res, next) {
 });
 
 // Iniciar o servidor
-server.listen(3000, function(){
+server.listen(3000, function() {
   console.log("Servidor em execução...");
 });
-
